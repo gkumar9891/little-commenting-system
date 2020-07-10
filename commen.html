@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <style>
+            .comment {
+                margin: 50px 130px;
+            }
+
+            .comment-system {
+                margin: 50px 130px;
+                padding: 15px;
+            }
+
+            input[type="text"] {
+                 padding: 10px;
+                 width: 100%;
+
+            }
+        </style>
+    </head>
+</head>
+<body>
+   
+    <div class="comment" id="comment">
+        <div class="content">
+        <h2>John Doe</h2>
+        <p>hello how are you i am fine what about you. hello how are you i am fine what about you. hello how are you i am fine what about you. hello how are you i am fine what about you.</p>
+        <button>REPLY</button>
+        </div>
+    
+
+        <div class="content">
+        <h2>John Doe</h2>
+        <p>hello how are you i am fine what about you. hello how are you i am fine what about you. hello how are you i am fine what about you. hello how are you i am fine what about you.</p>
+        <button>REPLY</button>
+        </div>
+    </div>
+
+    <div class="comment-system">
+        <input type="text" placeholder="enter your comments" name="comment" id="comm"> 
+        <button class="submit">Click to submit</button>
+    </div>
+
+    <script>
+        var submit = document.querySelector(".submit");
+        submit.addEventListener("click", fun);
+
+          function fun() {
+          var a = document.getElementById("comm").value;
+          var div = document.createElement("div");
+          div.classList.add("content")
+          var p = document.createElement("p");
+          
+          p.innerHTML = a;
+          div.appendChild(p);
+          console.log(div);
+
+          var comm =  document.getElementById("comment");
+
+          comm.insertBefore(div, comm.childNodes[0]);
+
+          /*
+          var text = document.createTextNode(a);
+          p.appendChild(text);
+          div.appendChild(p);
+          console.log(div);
+          console.log(p);
+          */
+          }
+    </script>
+</body>
+</html>
